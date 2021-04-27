@@ -8,7 +8,7 @@ import { SET_PRODUCTS } from '../redux/actions/produtActions'
 import ProductCard from './productCard'
 
 const ProductList = () => {
-    const products = useSelector((state) => state)
+    const products = useSelector((state) => state.allProducts.products)
     const dispatch = useDispatch()
     
     // AXIOS
@@ -26,8 +26,9 @@ const ProductList = () => {
     }, [])
     
     console.log("Products", products)
+    
     return (
-        <div>
+        <div className="ui grid container">
             <ProductCard/>
         </div>
     )

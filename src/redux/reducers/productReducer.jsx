@@ -15,3 +15,17 @@ export const prodcutReducer = (state = initialState, {type, payload}) => {
                 return state
     }    
 }
+
+export const selectedProdcutReducer = (state = {}, {type, payload}) => {
+    switch (type) {
+        case ProductActionTypes.SELECTED_PRODUCT:
+            return {
+                ...state,
+                ...payload 
+            };
+        case ProductActionTypes.REMOVE_SELECTED_PRODUCT:
+            return {};
+            default:
+                return state
+    }    
+}
